@@ -1,0 +1,160 @@
+<html>
+<head>
+    <title>C programs</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        h1 {
+            color: black;
+        }
+        h2 {
+            color: brown;
+        }
+        p {
+            font-size: 18px;
+            color: gray;
+        }
+        img {
+            width: 300px;
+            border: 2px solid black;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>C programs</h1>
+    <h2>1.Formatted & Unformatted I/O Functions (User Details Input)</h2>
+    
+    <p><br>
+	#include <stdio.h><br>
+	int main() {<br>
+    char name[50];<br>
+    int age;<br>
+    char gender;<br>
+    printf("Enter your name: ");<br>
+    scanf("%s", &name);<br>
+    printf("Enter your age: ");<br>
+    scanf("%d", &age);<br>
+    printf("Enter your gender (M/F): ");<br>
+    getchar(); <br>
+    gender = getchar();  <br>
+    printf("\n--- User Details ---\n");<br>
+    puts(name); <br>
+    printf("Age: %d\n", age);<br>
+    putchar(gender); <br>
+    printf("\n");<br>
+    return 0;<br>
+	}<br>
+	</p>
+
+    <img src="first.png" alt="image">
+	
+	<h2>2. Switch-Case & Goto (Simple Calculator)</h2>
+    
+    <p><br>
+	#include <stdio.h><br>
+
+	int main() {<br>
+    int choice;<br>
+    float num1, num2, result;<br>
+
+	menu:<br>
+    printf("\nSimple Calculator\n");<br>
+    printf("1. Addition\n2. Subtraction\n3. Multiplication\n4. Division\n5. Exit\n");<br>
+    printf("Enter your choice (1-5): ");<br>
+    scanf("%d", &choice);<br>
+
+    if (choice == 5) {<br>
+        printf("Exiting the program...\n");<br>
+        return 0;<br>
+    }<br>
+
+    printf("Enter two numbers: ");<br>
+    scanf("%f %f", &num1, &num2);<br>
+
+    switch(choice) {<br>
+        case 1:<br>
+            result = num1 + num2;<br>
+            printf("Result: %.2f\n", result);<br>
+            break;<br>
+        case 2:<br>
+            result = num1 - num2;<br>
+            printf("Result: %.2f\n", result);<br>
+            break;<br>
+        case 3:<br>
+            result = num1 * num2;<br>
+            printf("Result: %.2f\n", result);<br>
+            break;<br>
+        case 4:<br>
+            if (num2 == 0) {<br>
+                printf("Error! Division by zero.\n");<br>
+                goto menu; <br>
+            }<br>
+            result = num1 / num2;<br>
+            printf("Result: %.2f\n", result);<br>
+            break;<br>
+        default:<br>
+            printf("Invalid choice! Try again.\n");<br>
+            goto menu;<br>
+    }<br>
+
+    goto menu;  <br>
+	}<br>
+	</p>
+
+    <img src="second.png" alt="image">
+	
+	<h2>3. Square Pattern Printing</h2>
+    
+    <p><br>
+	#include <stdio.h><br>
+
+	int main() {<br>
+    int n;<br>
+    
+    printf("Enter the size of the square: ");<br>
+    scanf("%d", &n);<br>
+
+    for(int i = 0; i < n; i++) {<br>
+        for(int j = 0; j < n; j++) {<br>
+            printf("* ");<br>
+        }<br>
+        printf("\n");<br>
+    }<br>
+
+    return 0;<br>
+	}<br>
+	
+	</p>
+    <img src="third.png" alt="image">
+	
+	<h2>4. Right-Angled Pyramid Pattern</h2>
+    
+    <p><br>
+	#include <stdio.h><br>
+
+	int main() {<br>
+    int n;<br>
+    
+    printf("Enter the height of the pyramid: ");<br>
+    scanf("%d", &n);<br>
+
+    for(int i = 1; i <= n; i++) {<br>
+        for(int j = 1; j <= i; j++) {<br>
+            printf("* ");<br>
+        }<br>
+        printf("\n");<br>
+    }<br>
+
+    return 0;<br>
+	}<br>
+	</p>
+    <img src="fourth.png"alt="image">
+
+
+</body>
+</html>
